@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS `test_database`;
+USE `test_database`;
+
+CREATE TABLE IF NOT EXISTS `users`
+(
+    `user_id` INT NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR (30) NOT NULL UNIQUE,
+    `mail` VARCHAR (50) NOT NULL UNIQUE,
+    `password` CHAR (128) NOT NULL,
+    `Birthday` DATE NOT NULL,
+    PRIMARY KEY (`user_id`));
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
