@@ -2,7 +2,7 @@
 
 from flask import Flask, render_template, request
 
-from .register import RegisterUser, check_register_input
+from .register import RegisterUser
 
 app = Flask(__name__)
 
