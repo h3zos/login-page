@@ -1,3 +1,3 @@
 #coding: utf-8
 
-from .views import app
+from .app import app

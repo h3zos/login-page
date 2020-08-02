@@ -1,12 +1,13 @@
-CREATE DATABASE IF NOT EXISTS `test_database`;
-USE `test_database`;
+DROP DATABASE IF EXISTS `login_db`;
+CREATE DATABASE IF NOT EXISTS `login_db`;
+USE `login_db`;
 
 CREATE TABLE IF NOT EXISTS `users`
 (
-    `user_id` INT NOT NULL AUTO_INCREMENT,
+    `id_user` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR (30) NOT NULL UNIQUE,
     `mail` VARCHAR (50) NOT NULL UNIQUE,
     `password` CHAR (128) NOT NULL,
-    `Birthday` DATE NOT NULL,
-    PRIMARY KEY (`user_id`));
+    `birthday` DATE NOT NULL,
+    PRIMARY KEY (`id_user`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;

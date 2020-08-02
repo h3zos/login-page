@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
+{% extends "base.html" %}
+
+{% block head %}
     <title>Home</title>
-    <meta charset="utf-8">
-</head>
-<body>
+{% endblock %}
+
+{% block body %}
     <h1>Welcome to my website made with Flask.</h1>
     <nav>
         <a href="/login">Connexion</a>
         <a href="/register">Inscription</a>
     </nav>
-</body>
+{% endblock %}
 </html>
