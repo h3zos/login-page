@@ -7,7 +7,6 @@ class ConnexionDatabase:
     password = "root"
     adress = "localhost"
     database = "login_db"
-
     def get_connection(self):
         connexion = mysql.connector.connect(host=self.adress,
                                             user=self.user,
@@ -15,3 +14,6 @@ class ConnexionDatabase:
                                             database=self.database
                                             )
         return connexion
+    def close_connection(self, cursor, connexion):
+       cursor.close()
+       connexion.close()

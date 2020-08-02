@@ -9,3 +9,4 @@ class RegisterUser:
         cursor = db.cursor()
         cursor.execute("INSERT INTO `users`(`name`, `mail`, `password`, `birthday`) VALUES (%s, %s, %s, %s)",(name, mail, password, birthday))
         db.commit()
+        connexion.close_connection(cursor, db)

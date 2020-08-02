@@ -21,10 +21,10 @@ def register():
         usermail = request.form["usermail"]
         password = request.form["password"]
         birthday = request.form["birthday"]
-        if '' in (username, usermail, password, birthday) == True:
+        if ('' in (username, usermail, password, birthday)) == False:
             register = RegisterUser()
             register.register(username, usermail, password, birthday)
-            return 'Vous avez été enregistré'
+            return "Vous avez été enregistré"
         else:
             return "Il y a eu un problème"
     else:
