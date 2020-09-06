@@ -14,6 +14,6 @@ class ConnexionDatabase:
                                             database=self.database
                                             )
         return connexion
-    def close_connection(self, cursor, connexion):
+    def close(self, cursor, connexion):
        cursor.close()
        connexion.close()

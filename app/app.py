@@ -3,6 +3,7 @@
 from flask import Flask, render_template, request
 
 from .register import RegisterUser
+from .login import LoginUser
 
 app = Flask(__name__)
 
@@ -10,9 +11,19 @@ app = Flask(__name__)
 def homepage():
     return render_template('homepage.html')
 
-@app.route('/login')
+@app.route('/login', methods=["POST", "GET"])
 def login():
-    return 'login page'
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        if ('' in (username, password)) == False:
+           login = LoginUser()
+           if login.login(username, password) == True:
+               return "Vous êtes connecter"
+           else:
+               return "Veuillez vous créer un compte"
+    else:
+        return render_template("login.html")
 
 @app.route('/register', methods=["POST", "GET"])
 def register():
